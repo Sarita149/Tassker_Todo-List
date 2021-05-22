@@ -4,5 +4,10 @@
 }
 
 .strike{
-    text-decoration: line-through;
+    background: rgb(43, 243, 25);
+    /* text-decoration: line-through; */
 }
+.item{
+   background: #ccffcc;
+   /* background:#ccccff */
+ }

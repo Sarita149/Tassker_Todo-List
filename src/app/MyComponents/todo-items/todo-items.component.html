@@ -1,15 +1,15 @@
-<div class="p-2" style="max-width: 500px; display: flex; justify-content: space-between; background: wheat; 
+<div class="p-2 item" [ngClass]="{'strike': !todo.active,'item':todo.active}" style="max-width: 500px; display: flex; justify-content: space-between;
       border-radius: 1rem;">
-      <div class="content" style="width: 90%;">
-            <h3 [ngClass]="{'strike': !todo.active}">{{todo.title}}</h3>
+      <div class="content" style="width: 90%; font-family: poppins;">
+            <h3>{{todo.title}}</h3>
             <p [ngClass]="{'strike': !todo.active}">{{todo.desc}}</p>
-            <div class="form-group form-check">
-                  <input type="checkbox" class="form-check-input" id="todo{{i}}" [checked]="!todo.active" (click)="onCheckboxClick(todo)">
-                  <label class="form-check-label" for="todo{{i}}">Done</label>
-            </div>
       </div>
-      <div class="removeBtn" >
-            <button class="btn btn-sm btn-primary" (click)="onClick(todo)"><i class="far fa-trash-alt"></i></button>
+      <div class="removeBtn d-flex align-items-center" >
+            <button class="btn btn-sm mx-2" (click)="onClick(todo)"><i class="far fa-trash-alt"></i></button>
+            <div class="form-group form-check pt-1">
+                  <input type="checkbox" class="form-check-input" id="todo{{i}}" [checked]="!todo.active" (click)="onCheckboxClick(todo)">
+                  <label class="form-check-label" for="todo{{i}}"></label>
+            </div>
       </div>
       <!-- <hr style="height: 1px; background-color: gary;"> -->
 </div>

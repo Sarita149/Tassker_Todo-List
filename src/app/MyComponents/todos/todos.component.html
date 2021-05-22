@@ -1,0 +1,15 @@
+<div class="container py-2" style="background: #fff; max-width: 500px; border-radius: 2rem; box-shadow: 2px 2px 2rem black;">
+    <div class="d-flex" style=" justify-content: space-between; padding:0rem 1rem; align-items: center;
+    background-image: linear-gradient(rgb(252, 182, 182), rgb(253, 92, 92)); border-radius: 1rem;">
+        <h1>Tassker</h1>
+        <button class="btn btn-sm" style="background:#8F4CDE;box-shadow: 2px 5px 1rem #8F4CDE; border-radius: 50%; width: 30px; height: 30px; margin: 0rem;" 
+        (click)="addToDoItem()"><i class="fas fa-plus" style="color: #fff;"></i></button>
+    </div>
+    <app-add-todo-items (addTodo)="addTodo($event)" *ngIf="AddItems===true"></app-add-todo-items>
+    <div *ngIf="this.todos.length===0; else elseBlock"> <h5 class="text-center">No Todos to Display</h5></div>
+    <ng-template #elseBlock>
+        <div class="my-2" *ngFor=" let item of todos;index as i">
+            <app-todo-items [todo]="item" [i]="i"  (todoDelete)="DeleteTodo($event)"  (todoCheckbox)="checkboxToggleTodo($event)"></app-todo-items>
+        </div>
+    </ng-template>
+</div>

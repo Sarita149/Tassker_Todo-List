@@ -1,0 +1,8 @@
+.btn:hover{
+    color: white;
+    background: red;
+}
+
+.strike{
+    text-decoration: line-through;
+}
